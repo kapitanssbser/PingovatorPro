@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        FileIni fileIni = new FileIni(args[0]); //Получаем полный путь к файлу настроек
+        FileIni fileIni = new FileIni(args[0]); //Получаем полный путь к файлу настроек C:\SSPing\pingonator.txt
         for (int i = 0; i < 100; i++) {
             try {
                 for (String s : fileIni.adress){
