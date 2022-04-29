@@ -18,21 +18,12 @@ public class FileIni {
             BufferedReader reader = new BufferedReader(fileReader);
             String line = null;
             while ((line = reader.readLine()) != null){
-                //System.out.println(line);
                 if (line.equals("[ADRESS COUNT]")){
-                    //String s = reader.readLine();
-                    //System.out.println(s);
                     this.adresCount = Integer.parseInt(reader.readLine());
                 }
                 if (line.equals("[ADRESS]")){
-                    //String s;
                     ArrayList<String> myList = new ArrayList<String>();
-                    //System.out.println("Найдено");
                     for(int i = 0; i < this.adresCount; i++){
-                        //s = reader.readLine();
-                        //System.out.println(s);
-                        //this.adress.add(s);
-                        //myList = new ArrayList<String>();
                         myList.add(reader.readLine());
                         this.adress = myList;
                     }
