@@ -16,12 +16,17 @@ public class Main {
             System.out.println("Не указан путь к файлу настроек!");
             System.exit(-100);
         }
+        Runnable threadJob = new MyRunnable();
+        Thread myThead = new Thread(threadJob);
+        myThead.start();
+
         FileIni fileIni = new FileIni(args[0]); //Получаем полный путь к файлу настроек C:\SSPing\pingonator.txt
         MyLogFile log = new MyLogFile(fileIni.pathToFileLog);
         //log.closeMyLogFile();
         SaikovSoft saikovSoft = new SaikovSoft();
         saikovSoft.saikovPrint();
         for (int i = 0; i < 100; i++) {
+            //myThead.start();
             try {
                 for (String s : fileIni.adress) {
                     //Проходим по всем адресам
@@ -31,11 +36,11 @@ public class Main {
                     if (reachableServer1) {
                         Date date = new Date();
                         //System.out.println(date.getDate());
-                        //System.out.println(date.toString() + " " + s + " Пингуется");
-                        //log.setLogToFile(date.toString() + " " + s + " Пингуется"); //Пишем в лог файл
+                        System.out.println(date.toString() + " " + s + " Пингуется");
+                        log.setLogToFile(date.toString() + " " + s + " Пингуется"); //Пишем в лог файл
                     } else {
                         Date date = new Date();
-                        //System.out.println(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        System.out.println(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
                         log.setLogToFile(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
                     }
                 }

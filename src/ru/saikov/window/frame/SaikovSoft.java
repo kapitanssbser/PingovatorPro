@@ -7,6 +7,6 @@ public class SaikovSoft {
         System.out.println("Файл настроек найден и загружен.");
         System.out.println("Файл логирования найден.");
         System.out.println("Запись в лог пошла...");
-        System.out.println("Для выхода нажмите Е....");
+        System.out.println("Для выхода введите любую букву (не цифру)....");
     }
 }
