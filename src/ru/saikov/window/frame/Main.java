@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-final static String PATHTOLOG = "C:\\Users\\user084\\SSP\\PINGOVATOR\\log.txt";
+//final static String PATHTOLOG = "C:\\Users\\user084\\SSP\\PINGOVATOR\\log.txt";
 
     public static void main(String[] args) {
         // write your code here
@@ -17,7 +17,7 @@ final static String PATHTOLOG = "C:\\Users\\user084\\SSP\\PINGOVATOR\\log.txt";
             System.exit(-100);
         }
         FileIni fileIni = new FileIni(args[0]); //Получаем полный путь к файлу настроек C:\SSPing\pingonator.txt
-        MyLogFile log = new MyLogFile(PATHTOLOG);
+        MyLogFile log = new MyLogFile(fileIni.pathToFileLog);
         //log.closeMyLogFile();
         for (int i = 0; i < 100; i++) {
             try {

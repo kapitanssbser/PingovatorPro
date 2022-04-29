@@ -3,7 +3,7 @@ package ru.saikov.window.frame;
 import java.io.*;
 
 public class MyLogFile {
-    String pathTologFile;
+    //String pathTologFile;
     FileWriter fileWriter;
     BufferedWriter writer;
 

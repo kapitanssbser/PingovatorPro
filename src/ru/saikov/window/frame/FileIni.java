@@ -9,6 +9,7 @@ public class FileIni {
     int timeOut;     //Таймаут
     int time;        //Задержка опроса
     String pathToFileIni;  //Путь и имя файла настроек
+    String pathToFileLog; //Путь и файл лога
 
     public FileIni(String a_pathToFile){
         this.pathToFileIni = a_pathToFile;
@@ -33,6 +34,9 @@ public class FileIni {
                 }
                 if (line.equals("[TIME]")){
                     this.time = Integer.parseInt(reader.readLine());
+                }
+                if (line.equals("[LOG]")){
+                    this.pathToFileLog = reader.readLine();
                 }
 
             }
