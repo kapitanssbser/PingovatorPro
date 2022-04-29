@@ -5,7 +5,10 @@ import java.net.InetAddress;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+
 public class Main {
+
+final static String PATHTOLOG = "C:\\Users\\user084\\SSP\\PINGOVATOR\\log.txt";
 
     public static void main(String[] args) {
         // write your code here
@@ -14,6 +17,8 @@ public class Main {
             System.exit(-100);
         }
         FileIni fileIni = new FileIni(args[0]); //Получаем полный путь к файлу настроек C:\SSPing\pingonator.txt
+        MyLogFile log = new MyLogFile(PATHTOLOG);
+        //log.closeMyLogFile();
         for (int i = 0; i < 100; i++) {
             try {
                 for (String s : fileIni.adress) {
@@ -23,10 +28,13 @@ public class Main {
                     TimeUnit.SECONDS.sleep(fileIni.time);
                     if (reachableServer1) {
                         Date date = new Date();
+                        //System.out.println(date.getDate());
                         System.out.println(date.toString() + " " + s + " Пингуется");
+                        log.setLogToFile(date.toString() + " " + s + " Пингуется"); //Пишем в лог файл
                     } else {
                         Date date = new Date();
                         System.out.println(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        log.setLogToFile(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
                     }
                 }
             } catch (IOException | InterruptedException e) {
