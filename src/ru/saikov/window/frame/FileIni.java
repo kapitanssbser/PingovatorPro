@@ -1,9 +1,6 @@
 package ru.saikov.window.frame;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class FileIni {
@@ -50,6 +47,9 @@ public class FileIni {
             }
             reader.close();
             //Знаем сколько адресов
+        }catch (FileNotFoundException exception) {
+            System.out.println("Файл настроек не найден!");
+            System.exit(-100);
         }catch (IOException exception){
             exception.printStackTrace();
         }
