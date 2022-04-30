@@ -37,7 +37,7 @@ public class Main {
                         Date date = new Date();
                         //System.out.println(date.getDate());
                         //System.out.println(date.toString() + " " + s + " Пингуется");
-                        log.setLogToFile(date.toString() + " " + s + " Пингуется"); //Пишем в лог файл
+                        //log.setLogToFile(date.toString() + " " + s + " Пингуется"); //Пишем в лог файл
                     } else {
                         Date date = new Date();
                         //System.out.println(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
