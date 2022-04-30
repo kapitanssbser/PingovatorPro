@@ -25,7 +25,7 @@ public class Main {
         //log.closeMyLogFile();
         SaikovSoft saikovSoft = new SaikovSoft();
         saikovSoft.saikovPrint();
-        for (int i = 0; i < 100; i++) {
+        for ( ; ; ) {     //Бесконечный цикл, выход только по костылю
             //myThead.start();
             try {
                 for (String s : fileIni.adress) {
@@ -36,11 +36,11 @@ public class Main {
                     if (reachableServer1) {
                         Date date = new Date();
                         //System.out.println(date.getDate());
-                        System.out.println(date.toString() + " " + s + " Пингуется");
+                        //System.out.println(date.toString() + " " + s + " Пингуется");
                         log.setLogToFile(date.toString() + " " + s + " Пингуется"); //Пишем в лог файл
                     } else {
                         Date date = new Date();
-                        System.out.println(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        //System.out.println(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
                         log.setLogToFile(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
                     }
                 }
