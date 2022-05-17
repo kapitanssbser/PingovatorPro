@@ -25,10 +25,12 @@ public class Main {
         //log.closeMyLogFile();
         SaikovSoft saikovSoft = new SaikovSoft();
         saikovSoft.saikovPrint();
+
         for ( ; ; ) {     //Бесконечный цикл, выход только по костылю
             //myThead.start();
             try {
                 for (String s : fileIni.adress) {
+                    InfoIp infoIp = new InfoIp(s); //Создаем объект и передаем ему IP адрес
                     //Проходим по всем адресам
                     InetAddress address1 = InetAddress.getByName(s);
                     boolean reachableServer1 = address1.isReachable(fileIni.timeOut);
@@ -38,10 +40,15 @@ public class Main {
                         //System.out.println(date.getDate());
                         //System.out.println(date.toString() + " " + s + " Пингуется");
                         //log.setLogToFile(date.toString() + " " + s + " Пингуется"); //Пишем в лог файл
+                        //System.out.println((date.toString() + " " + s + " Пингуется!" + infoIp.getNameOfMachine() + " " +
+                        //        infoIp.getNaznachenie()));
+
                     } else {
                         Date date = new Date();
                         //System.out.println(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                        log.setLogToFile(date.toString() + " " + s + " НЕ Пингуется!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        log.setLogToFile(date.toString() + " " + s + " НЕ Пингуется!" + infoIp.getNameOfMachine() + " - " +
+                                infoIp.getNaznachenie());
+                        System.out.println("Внимание! Есть записи в логфайле!");
                     }
                 }
             } catch (IOException | InterruptedException e) {
