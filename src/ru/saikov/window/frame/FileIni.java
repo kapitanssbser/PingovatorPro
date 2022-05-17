@@ -26,8 +26,9 @@ public class FileIni {
                     ArrayList<String> myList = new ArrayList<String>();
                     for(int i = 0; i < this.adresCount; i++){
                         myList.add(reader.readLine());
-                        this.adress = myList;
+                        //this.adress = myList; //ј разве не надо вынести за пределы цикла?
                     }
+                    this.adress = myList; //ј разве не надо вынести за пределы цикла?
                 }
                 if (line.equals("[TIMEOUT]")){
                     this.timeOut = Integer.parseInt(reader.readLine());
